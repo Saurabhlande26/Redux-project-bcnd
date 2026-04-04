@@ -1,4 +1,4 @@
-import { AppDataSource } from "../config/db";
+import { AppDataSource } from "../config/data-source";
 import { Todo } from "../entity/Todo";
 
-export const todoRepository = AppDataSource.getRepository(Todo);
+export const Repository = AppDataSource.getRepository(Todo);

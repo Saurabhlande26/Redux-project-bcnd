@@ -1,14 +1,26 @@
-import { todoRepository } from "../repository/todoRepository";
+import { Repository } from "../repository/todoRepository";
 
 export const getTodosService = async () => {
-    return await todoRepository.find();
+    return await Repository.find();
 };
 
 export const addTodoService = async (title: string) => {
-    const todo = todoRepository.create({ title });
-    return await todoRepository.save(todo);
+    const todo = Repository.create({ title });
+    return await Repository.save(todo);
 };
 
 export const deleteTodoService = async (id: number) => {
-    return await todoRepository.delete(id);
+    return await Repository.delete(id);
+};
+
+export const updateTodoService = async (id: number, title: string) => {
+    const todo = await Repository.findOneBy({ id });
+
+    if (!todo) {
+        throw new Error("Todo not found");
+    }
+
+    todo.title = title;
+
+    return await Repository.save(todo);
 };
