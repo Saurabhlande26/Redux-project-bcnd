@@ -1,5 +1,5 @@
 import express from "express";
-import { login, refresh } from "../controllers/authController";
+import { login, refresh, register } from "../controllers/authController";
 import { authenticate } from "../middleware/authMiddleware";
 import { authorize } from "../middleware/roleMiddleware";
 import { addTodo, deleteTodo, getTodos, updateTodo } from "../controllers/todoController";
@@ -7,6 +7,7 @@ import { addTodo, deleteTodo, getTodos, updateTodo } from "../controllers/todoCo
 const router = express.Router();
 
 router.post("/login", login);
+router.post("/register", register);
 router.post("/refresh", refresh);
 
 router.get("/todos", getTodos);

@@ -27,9 +27,11 @@
   "homepage": "https://github.com/Saurabhlande26/Redux-project-bcnd#readme",
   "description": "",
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
+    "bcrypt": "^6.0.0",
     "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
     "typeorm": "^0.3.28",
