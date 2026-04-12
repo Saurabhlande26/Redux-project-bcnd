@@ -5,7 +5,7 @@ export class Todo1775484325734 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`
-            CREATE TABLE \`todo\` (
+            CREATE TABLE IF NOT EXISTS \`todo\` (
                 \`id\` int NOT NULL AUTO_INCREMENT,
                 \`title\` varchar(255) NOT NULL,
                 \`created_at\` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),

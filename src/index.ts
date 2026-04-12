@@ -3,7 +3,7 @@ import cors from "cors";
 import authRoutes from "./routes";
 import { AppDataSource } from "./config/data-source";
 const app = express();
-
+const PORT = process.env.PORT || "5000"
 app.use(cors());
 app.use(express.json());
 
@@ -13,8 +13,8 @@ AppDataSource.initialize()
     .then(() => {
         console.log("DB Connected");
 
-        app.listen(26, () => {
-            console.log("Server running");
+        app.listen(PORT, () => {
+            console.log(`Server running ${PORT}`);
         });
     })
     .catch((err) => console.log(err));
